@@ -7,12 +7,13 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+       <link rel="stylesheet" type="text/css" href="css/style.css">
        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <body>
+    <body id="home" class="scrollspy">
 
       <!-- Navbar -->
       <div class="navbar-fixed">
@@ -94,6 +95,19 @@
 
    <!-- Section: Search -->
 
+  <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h3>Search Destinations</h3>
+            <div class="input-field">
+              <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Spain, Dubai, etc..">
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
       <script>
          //sidenav
@@ -107,6 +121,20 @@
               height: 500,
               transition: 500,
               interval: 6000
+            });
+
+        // Autocomplete
+            const ac = document.querySelector('.autocomplete');
+            M.Autocomplete.init(ac, {
+              data: {
+                "Spain": null,
+                "Hawaii": null,
+                "Hawaii": null,
+                "Dubai": null,
+                "California": null,
+                "Jamacia": null,
+                "Europe": null,
+              }
             });
       </script>
     </body>
